@@ -511,3 +511,13 @@ uniqueShirtSize.forEach(shirtSize => {
 console.log(shirtOrders);
 
 // Problem 3
+// Get a list of companies represented in the race
+
+let companies = [];
+runners.forEach(runner => {
+	companies = [ ...companies, runner.company_name ];
+});
+
+let companyList = [ ...new Set(companies) ];
+companyList.sort();
+console.log(companyList);
