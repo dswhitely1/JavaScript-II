@@ -461,21 +461,21 @@ let fullName = [];
 runners.forEach(runner => {
 	fullName = [ ...fullName, `${runner.first_name} ${runner.last_name}` ];
 });
-console.log(fullName);
+console.table(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = runners.map(runner => {
 	return runner.first_name.toUpperCase();
 });
-console.log(allCaps);
+console.table(allCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = runners.filter(runner => {
 	return runner.shirt_size === 'L';
 });
-console.log(largeShirts);
+console.table(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
@@ -491,7 +491,7 @@ console.log(ticketPriceTotal);
 let vipRunners = runners.filter(runner => {
 	return runner.donation > 150;
 });
-console.log(vipRunners);
+console.table(vipRunners);
 // Problem 2  With the VIP's return the size of each shirt needed to order
 // Put the Shirt sizes into an array and remove duplicates
 let shirtSizes = [];
@@ -506,9 +506,12 @@ uniqueShirtSize.forEach(shirtSize => {
 		return runner.shirt_size === shirtSize;
 	});
 
-	shirtOrders = [ ...shirtOrders, `${shirtSize} : ${tempObjects.length}` ];
+	shirtOrders.push({
+		shirtSize : `${shirtSize}`,
+		quantity  : `${tempObjects.length}`,
+	});
 });
-console.log(shirtOrders);
+console.table(shirtOrders);
 
 // Problem 3
 // Get a list of companies represented in the race
@@ -520,4 +523,4 @@ runners.forEach(runner => {
 
 let companyList = [ ...new Set(companies) ];
 companyList.sort();
-console.log(companyList);
+console.table(companyList);
