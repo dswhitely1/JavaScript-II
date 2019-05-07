@@ -498,7 +498,9 @@ let shirtSizes = [];
 runners.forEach(runner => {
 	shirtSizes = [ ...shirtSizes, `${runner.shirt_size}` ];
 });
+console.log(shirtSizes);
 let uniqueShirtSize = [ ...new Set(shirtSizes) ];
+console.log(uniqueShirtSize);
 let shirtOrders = [];
 let tempObjects = {};
 uniqueShirtSize.forEach(shirtSize => {

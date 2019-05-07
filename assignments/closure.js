@@ -4,12 +4,12 @@ const multiply = () => {
 	let multiply = 2;
 
 	return () => {
-		return (multiply = +multiply * multiply);
+		return (multiply += multiply * multiply);
 	};
 };
 
 const newMultiply = multiply();
-
+console.log(multiply);
 console.log(newMultiply);
 console.log(newMultiply());
 console.log(newMultiply());
