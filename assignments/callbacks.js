@@ -57,7 +57,7 @@ function contains(item, list, cb) {
 	});
 	return isItemThere.length !== 0 ? cb(true) : cb(false);
 }
-contains('Pencils', items, function(isThere) {
+contains('Pencils', items, isThere => {
 	console.log(isThere);
 });
 /* STRETCH PROBLEM */
